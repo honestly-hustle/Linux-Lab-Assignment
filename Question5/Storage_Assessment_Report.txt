@@ -1,0 +1,93 @@
+Question 5 – Storage Health Assessment
+
+Command 1:
+lsblk
+
+Output:NAME
+    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda   8:0    0 356.9M  1 disk
+sdb   8:16   0 159.4M  1 disk
+sdc   8:32   0     2G  0 disk [SWAP]
+sdd   8:48   0     1T  0 disk /mnt/wslg/distr
+
+Observation:
+The lsblk command lists all available storage devices and partitions.
+It provides information about disks, partitions, and mount points.
+This helps identify the storage resources available on the system.
+
+
+Command 2:
+df -h
+
+Output:Filesystem      Size  Used Avail Use% Mounted on
+none            3.9G     0  3.9G   0% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
+none            3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers         125G  119G  6.8G  95% /usr/lib/wsl/drivers
+/dev/sdd       1007G  1.6G  955G   1% /
+none            3.9G   44K  3.9G   1% /mnt/wslg
+none            3.9G     0  3.9G   0% /usr/lib/wsl/lib
+rootfs          3.9G  2.8M  3.9G   1% /init
+none            3.9G  512K  3.9G   1% /run
+none            3.9G     0  3.9G   0% /run/lock
+none            3.9G     0  3.9G   0% /run/shm
+none            3.9G   80K  3.9G   1% /mnt/wslg/versions.txt
+none            3.9G   80K  3.9G   1% /mnt/wslg/doc
+C:\             125G  119G  6.8G  95% /mnt/c
+tmpfs           787M   20K  787M   1% /run/user/1000
+
+Observation:
+The df -h command displays mounted file systems and disk usage in a human-readable format.
+It shows total, used, and available storage space.
+This helps monitor storage capacity and free space.
+
+
+Command 3:
+df -i
+
+Output:Filesystem       Inodes   IUsed    IFree IUse% Mounted on
+none            1007310       5  1007305    1% /usr/lib/modules/6.18.33.2-microsoft-standard-WSL2
+none            1007310       2  1007308    1% /mnt/wsl
+drivers             999 -999001  1000000     - /usr/lib/wsl/drivers
+/dev/sdd       67108864   49506 67059358    1% /
+none            1007310      23  1007287    1% /mnt/wslg
+none            1007310       6  1007304    1% /usr/lib/wsl/lib
+rootfs          1005871      12  1005859    1% /init
+none            1007310     553  1006757    1% /run
+none            1007310       2  1007308    1% /run/lock
+none            1007310       1  1007309    1% /run/shm
+none            1007310      52  1007258    1% /mnt/wslg/versions.txt
+none            1007310      52  1007258    1% /mnt/wslg/doc
+C:\                 999 -999001  1000000     - /mnt/c
+tmpfs            201462      43   201419    1% /run/user/1000
+
+Observation:
+The df -i command displays inode usage.
+Inodes store metadata about files and directories.
+The output shows that sufficient inodes are available for creating additional files.
+
+
+Command 4:
+du -sh .
+
+Output:108K    .
+
+Observation:
+The du command calculates the total storage used by the current directory.
+It provides a summary of the assignment folder size.
+This helps estimate project storage consumption.
+
+
+Storage Health Observations:
+
+The storage devices are functioning normally.
+Mounted file systems have sufficient available space.
+Disk utilization is healthy and no partition is close to full capacity.
+Inode utilization is also healthy with plenty of free inodes available.
+
+
+Recommendations:
+
+1. Regularly remove unnecessary file.
+2. Archive old project data.
+3. Monitor storage usage periodically.
+4. Maintain sufficient free space to ensure good system performance.

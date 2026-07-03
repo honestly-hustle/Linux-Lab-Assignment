@@ -1,0 +1,47 @@
+Question 4 – File Access and I/O Investigation
+
+Command 1:
+lsof | head -20
+
+Observation:
+The lsof command lists files currently opened by running processes.
+It helps identify which applications are using files.
+This is useful for troubleshooting file access issues.
+
+Command 2:
+ls -l /proc/self/fd
+
+Observation:
+Linux represents open files using file descriptors.
+Descriptor 0 is standard input, 1 is standard output, and 2 is standard error.
+These descriptors are automatically managed by the operating system.
+
+Command 3:
+echo "This is normal output." > output.txt
+
+Observation:
+The output redirection operator (>) stores command output in a file.
+If the file does not exist, Linux creates it.
+If the file exists, its contents are overwritten.
+
+Command 4:
+ls nonexistentfile 2> error.txt
+
+Observation:
+The command generates an error because the file does not exist.
+The error message is redirected into error.txt using 2>.
+Standard error is stored separately from standard output.
+
+Command 5:
+ulimit -a
+
+Observation:
+The ulimit command displays resource limits for the current shell.
+These limits include memory, open files, stack size, and CPU time.
+Resource limits help maintain system stability.
+
+Explanation:
+
+Linux manages file I/O through file descriptors.
+Standard input (0), standard output (1), and standard error (2) allow programs to communicate with the operating system.
+Output and errors can be redirected independently, making debugging easier.

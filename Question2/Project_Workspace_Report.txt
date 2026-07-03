@@ -1,0 +1,63 @@
+
+Question 2 – Secure Project Workspace Setup
+
+Command 1:
+mkdir ProjectWorkspace
+mkdir docs src data
+
+Observation:
+A project workspace was created with separate directories for documentation, source code, and data.
+Organizing files into separate folders improves project management and maintenance.
+The directory structure is clean and easy to navigate.
+
+
+Command 2:
+tree
+
+Observation:
+The tree command displays the complete directory hierarchy.
+It confirms that all required folders were created successfully.
+The workspace structure is properly organized.
+
+
+Command 3:
+ls -ld .
+
+Observation:
+This command displays the permissions of the current directory.
+Initially, the workspace had default permissions assigned by Linux.
+These permissions depend on the current umask value.
+
+
+Command 4:
+chmod 750 .
+
+Observation:
+The chmod command modified the directory permissions.
+The owner now has full access, the group has read and execute permissions, and others have no access.
+This improves the security of project files.
+
+
+Command 5:
+stat .
+
+Observation:
+The stat command displays detailed information about the directory.
+It shows ownership, permissions, timestamps, inode number, and storage details.
+This information helps verify that the permission changes were applied correctly.
+
+
+Command 6:
+umask
+
+Observation:
+The umask command shows the default permission mask.
+The mask determines the default permissions assigned to newly created files and directories.
+Using an appropriate umask improves system security.
+
+
+Explanation:
+
+Restricting directory permissions prevents unauthorized users from accessing project files.
+Giving full permissions only to the owner protects sensitive project data while still allowing controlled access to group members.
+This approach is commonly used in Linux systems to maintain data security.

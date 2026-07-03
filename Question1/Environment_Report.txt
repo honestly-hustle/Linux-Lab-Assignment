@@ -1,0 +1,78 @@
+
+Question 1 - Linux Environment Verification
+
+Name: Harshil
+
+Command 1:
+whoami
+
+Output:
+harshil
+
+Observation:
+This command displays the username of the currently logged-in user.
+The output confirms that I am logged in as "harshil".
+
+
+Command 2:
+groups
+
+Output:
+harshil adm cdrom sudo dip plugdev users
+
+Observation:
+This command lists all groups associated with the current user.
+These groups determine the permissions and privileges available to my account.
+
+
+Command 3:
+echo $SHELL
+
+Output:
+/bin/bash
+
+Observation:
+This command displays the current shell being used.
+The output shows that the Bash shell is the default shell.
+
+
+Command 4:
+pwd
+
+Output:
+/home/harshil/Linux-Lab-Assignment/Question1
+
+Observation:
+This command prints the current working directory.
+It confirms that I am working inside the Question1 directory.
+
+
+Command 5:
+ls -la
+
+Output:
+total 8
+drwxr-xr-x 2 harshil harshil 4096 Jul 3 17:29 .
+drwxr-xr-x 7 harshil harshil 4096 Jul 3 17:25 ..
+-rw-r--r-- 1 harshil harshil 0 Jul 3 17:29 Environment_Report.txt
+
+Observation:
+This command lists all files and directories including hidden files.
+It also displays file permissions, ownership, size, and modification date.
+
+
+Command 6:
+ping -c 4 google.com
+
+Output:
+4 packets transmitted, 4 received, 0% packet loss
+
+Observation:
+The ping command checks network connectivity.
+The successful responses confirm that the system is connected to the internet.
+
+
+Conclusion:
+
+The Linux environment was successfully verified.
+The user account information, shell, working directory, file listing, and network connectivity were all checked successfully.
